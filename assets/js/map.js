@@ -663,7 +663,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     jeju: { latitude: 33.4996, longitude: 126.5312, zoom: 11 },
   };
 
-  let activeCategory = new URLSearchParams(window.location.search).get("category") || "all";
+  // ?only=<category> — 광고주 시연용 '단일 카테고리' 모드: 해당 카테고리만 표시하고 카테고리 탭을 숨긴다.
+  const onlyCategory = new URLSearchParams(window.location.search).get("only") || "";
+  if (onlyCategory) document.documentElement.classList.add("map-only-mode");
+  let activeCategory = onlyCategory || new URLSearchParams(window.location.search).get("category") || "all";
   let selectedMediaSlug = new URLSearchParams(window.location.search).get("media") || "";
   let detailOpen = Boolean(selectedMediaSlug);
   // 상세를 열면 기본은 '상세만' 표시(목록 숨김) — 지도 보이는 영역을 최대로.

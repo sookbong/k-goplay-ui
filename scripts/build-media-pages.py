@@ -243,10 +243,11 @@ def group_summary_cards(unis, sgs):
             ("대학교 카페 미디어 대학광고 캠퍼스 카페광고 mz " + " ".join(u.get("name", "") for u in unis)).lower())
     if sgs:
         out += _group_card(
-            "스마트가로 미디어", f"전국 {len(sgs)}곳 · 역·대학가 보행자 밀착",
-            "월 15만원부터 · 구좌 단위 집행", "보행자·상권 이용객에 노출",
+            "스마트가로 미디어", f"전국 {len(sgs)}곳 · 공공 가로시설물(휴지통 상단) 디스플레이",
+            "월 15만원 · 구좌 단위 집행", "보행자 밀착 노출 (940×530mm)",
             f'media-{esc(sgs[0]["slug"])}.html', "other", card_image(sgs[0], 1),
-            ("스마트가로 미디어 스마트 가로 사이니지 " + " ".join(s.get("name", "") for s in sgs)).lower())
+            # '사이니지'는 금지어 — 등록 키워드가 '사이니지 설치·솔루션' 수요라 의도가 정반대(봇 오인 위험)
+            ("스마트가로 스마트가로광고 가로시설물 가로변광고 " + " ".join(s.get("name", "") for s in sgs)).lower())
     return out
 
 # ───────────────────────── 아이콘 ─────────────────────────
