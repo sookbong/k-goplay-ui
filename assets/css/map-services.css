@@ -7,6 +7,16 @@
 /* ?only=<category> 단일 카테고리 모드(광고주 시연용) — 카테고리 탭을 숨겨 해당 카테고리만 보이게 한다.
    검색창은 남겨 위치 탐색은 가능하게 유지. (map.js 가 html.map-only-mode 를 붙인다) */
 html.map-only-mode .map-category-list { display: none; }
+/* 광고주 뷰: 상단 헤더·추천 큐레이션 팝업·우측 서비스 도크·연락처 카드 전부 숨김 */
+html.map-only-mode .map-global-header { display: none; }
+html.map-only-mode .map-curation-panel,
+html.map-only-mode .map-curation-mobile-toggle { display: none !important; }
+html.map-only-mode .gps-dock,
+html.map-only-mode .map-contact-card { display: none !important; }
+/* 아파트 패키지 상품 보기 버튼도 숨김(광고주 뷰) */
+html.map-only-mode .map-elev-pkg-link { display: none !important; }
+/* 리스트 각 항목의 '상세보기' 링크 숨김(광고주 뷰) */
+html.map-only-mode .map-elev-detail-link { display: none !important; }
 
 /* 매체 마커 클러스터 배지 (+N) — 채운 원. 개수가 많을수록 '크고 진하게'(연보라→네이비) 5단계.
    흰 얇은 링 + 옅은 그림자로 지도 위에서 분리. 크기·색이 밀집도를 말하고 숫자는 보조.
